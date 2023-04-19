@@ -30,7 +30,7 @@
   
 <img src='https://www.herokucdn.com/deploy/button.png'>
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pkm7bu?referralCode=3ez0Ta
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pkm7bu?referralCode=3ez0Ta)
   
 </a>
   
