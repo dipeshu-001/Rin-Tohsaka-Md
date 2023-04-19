@@ -49,8 +49,8 @@
 
  ## 📙 Guide
 
- - [Self Hosting Guide](https://github.com/Quantum-realm/Quantum-Botto/blob/master/Self-Hosting-Guide.md)
- - [Heroku Hosting Guide](https://github.com/Quantum-realm/Quantum-Botto/blob/master/Heroku-Hosting-Guide.md)
+ - [Self Hosting Guide](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/Self-Hosting-Guide.md)
+ - [Heroku Hosting Guide](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/Heroku-Hosting-Guide.md)
 
  ## 💪 Contributing
 
