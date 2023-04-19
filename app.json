@@ -1,5 +1,5 @@
 {
-  "name": "Rin-Tohsaka",
+  "name": "WhatsApp-bot",
   "description": "A WhatsApp Bot written in JavaScript using Baileys.",
   "keywords": [
     "bot",
@@ -7,9 +7,9 @@
     "whatsapp-bot",
     "whatsapp-sticker-bot"
   ],
-  "logo": "https://ibb.co/Jqf32Fz",
-  "website": "https://github.com/Toshi-san001/Rin-Tohsaka#readme",
-  "repository": "https://github.com/Toshi-san001/Rin-Tohsaka",
+  "logo": "",
+  "website": "https://github.com/Quantum-realm/Quantum-Botto#readme",
+  "repository": "https://github.com/LuckyYam/WhatsApp-bot.git",
   "success_url": "/",
   "env": {
     "NAME": {

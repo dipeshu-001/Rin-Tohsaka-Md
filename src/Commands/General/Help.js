@@ -22,14 +22,14 @@ module.exports = class command extends Command {
     execute = async (m, args) => {
         const { context } = args
         if (!context) { 
-            const buffer = await this.helper.utils.getBuffer('https://telegra.ph/file/01ed8e4ad44b91417a64b.mp4')
+            const buffer = await this.helper.utils.getBuffer('https://telegra.ph/file/2f013ec99ff1284e1c9a1.mp4')
             const commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
             }))
-            let text = `👋 Konichiwa! *@${m.sender.jid.split('@')[0]}*, I'm ${
+            let text = `Konichiwa! *@${m.sender.jid.split('@')[0]}*, I'm ${
                 this.helper.config.name}
-            \n♦️ prefix ~> "${this.helper.config.prefix}"\n\nMy simple usable commands are listed below`
+            \nMy prefix is - "${this.helper.config.prefix}"\n\nThe usable commands are listed below.`
             const categories = []
             for (const command of commands) {
                 if (command.data.config.category === 'dev') continue
@@ -43,7 +43,7 @@ module.exports = class command extends Command {
                 filteredCommands.forEach((command) => categoryCommands.push(command.data.name))
                 text += `\`\`\`${categoryCommands.join(', ')}\`\`\``
             }
-            text += `\n\n📒 *Note:* Use ${this.helper.config.prefix}help <command_name> for more info of a specific command\n\n🔰 Eg: *${this.helper.config.prefix}help Waifu*`
+            text += `\n\n📕 *Note:* Use ${this.helper.config.prefix}help <command_name> for more info of a specific command. Example: *${this.helper.config.prefix}help hello*`
             return void (await m.reply(buffer, 'video', true, undefined, text, [m.sender.jid]))
         } else {
             const cmd = context.trim().toLowerCase()
@@ -66,7 +66,7 @@ module.exports = class command extends Command {
         
      }
         
-emojis = [ '💰','☘️','🧧','🎐','🍁']
+emojis = [ '💰','☘️','🧧','🍒','🎮','🎐','🍁']
      
 
 }

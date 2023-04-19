@@ -1,4 +1,4 @@
-# Rin-Tohsaka Self-Hosting-Guide
+# WhatsApp-bot Self-Hosting-Guide
 
 ## ⛵ Prerequisites
 
@@ -12,8 +12,8 @@
 
  Run the following commands to clone the repo
  ```SH
-> git clone https://github.com/Toshi-san001/Rin-Tohsaka
-> cd Rin-Tohsaka 
+> git clone https://github.com/Toshi-san001/ZeroTw_1
+> cd ZeroTw_1
  ```
 
  Run this following command to install the dependencies 
@@ -23,7 +23,7 @@
 
  ## ⚠ Requirements
 
- - A cluster URI of the [MongoDB](https://www.mongodb.com/). You can get it by following the steps given [here](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/MongoDB-Guide.md)
+ - A cluster URI of the [MongoDB](https://www.mongodb.com/). You can get it by following the steps given [here](https://github.com/LuckyYam/WhatsApp-bot/blob/master/MongoDB-Guide.md)
 
  ## 🔧 Configuration
 
@@ -50,4 +50,4 @@
 
 # Don't want to do the hassle of setting up on your own PC?
 
- [Set it up on Heroku](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/Heroku-Hosting-Guide.md)
+ [Set it up on Heroku](https://github.com/LuckyYam/WhatsApp-bot/blob/master/Heroku-Hosting-Guide.md)

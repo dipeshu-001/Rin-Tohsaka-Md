@@ -6,7 +6,7 @@ module.exports = class command extends Command {
         super('gpt', {
             description: 'Says hi to the bot',
             category: 'general',
-            usage: 'hi',
+            usage: 'gpt',
             exp: 15,
             cooldown: 5
         })

@@ -6,7 +6,7 @@ module.exports = class command extends Command {
         super('delete', {
             description: 'Says hi to the bot',
             category: 'general',
-            usage: 'hi',
+            usage: 'delete',
             aliases: ['del'],
             exp: 15,
             cooldown: 5

@@ -19,6 +19,21 @@ module.exports = class command extends Command {
      */
 
     execute = async (m) => {
-        return void m.reply(`Hello! ${M.sender.username}`)
+        // return void m.reply(`Hello! ${m.sender.username}`)
+        // send a buttons message!
+        const hello =[
+            {buttonId: '.help', buttonText: {displayText: 'Commands'}, types: 2},
+     
+     
+        ]
+        let buttonMessageds = {
+         image: {url:"https://telegra.ph/file/75368c6fe4abb9d0f2bb9.png"},
+         caption: `Hello! ${m.sender.username}` ,
+         footer: `${process.env.NAME}`,
+         buttons: hello,
+         headerType: 4
+     }
+     await this.client.sendMessage(m.from,buttonMessageds,{quoted:m.message})
+
     }
 }

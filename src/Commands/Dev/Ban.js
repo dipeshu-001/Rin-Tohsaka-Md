@@ -6,7 +6,7 @@ module.exports = class command extends Command {
         super('ban', {
             description: 'Ban/unban users',
             category: 'dev',
-            usage: 'ban [tag/quote users] Reason or |',
+            usage: `ban [tag/quote users] Reason or |`,
             cooldown: 5
         })
     }

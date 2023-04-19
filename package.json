@@ -1,5 +1,5 @@
 {
-  "name": " Rin-Tohsaka ",
+  "name": "ani",
   "version": "0.0.1",
   "description": "A WhatsApp bot written in JavaScript using Baileys",
   "author": "Toshi-san001 & Eximinati",
@@ -22,7 +22,8 @@
     "url": "https://github.com/Quntam-realm/Quntam-Botto.git"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "^5.0.0",
+    "@adiwajshing/baileys": "https://github.com/Eximinati/Baileys.git",
+    "@adiwajshing/eslint-config": "https://github.com/adiwajshing/eslint-config.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^10.0.0",
     "@shineiichijo/marika": "^2.0.3",

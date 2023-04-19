@@ -1,12 +1,12 @@
-# Rin-Tohsaka Heroku Deploy Guide
+# WhatsApp-bot Heroku Deploy Guide
 
 ## ⚠ Requirements
 
- - A cluster URI of the [MongoDB](https://www.mongodb.com/). You can get it by following the steps given [here](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/MongoDB-Guide.md)
+ - A cluster URI of the [MongoDB](https://www.mongodb.com/). You can get it by following the steps given [here](https://github.com/LuckyYam/WhatsApp-bot/blob/master/MongoDB-Guide.md)
 
 ### Pre-requisite
 
-1. [Rin-Tohsaka](https://github.com/Toshi-san001/Rin-Tohsaka) - Go there
+1. [WhatsApp-bot](https://github.com/LuckyYam/WhatsApp-bot) - Go there
 2. Scroll down a bit and you will see the "Deploy To Heroku" button in purple color (sorry if you are color blind)
 3. Click on it and login or sign up for Heroku
 4. Enter the following fields
