@@ -1,6 +1,6 @@
 <!-- ![Just...]() -->
 
-<a href="https://ibb.co/n6d151N"><img src="https://i.ibb.co/LYjg2gX/1681736666680.jpg" alt="1681736666680" border="0" /></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/pQthZr3/rin-tohsaka.gif" alt="rin-tohsaka" border="0" /></a>
 
 <div align='center'>
 
