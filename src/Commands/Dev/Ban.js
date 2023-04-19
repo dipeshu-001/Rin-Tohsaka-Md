@@ -27,7 +27,7 @@ module.exports = class command extends Command {
         users = users.split(/ +/).filter(Boolean)
     }
 
-    let text = `🚫 *State: BANNED*\n⚗ *Users:*\n`
+    let text = `🚦 *State: BANNED*\n⚗ *Users:*\n`
     for (const user of users) {
         const info = await this.helper.DB.getUser(user)
         if (info.ban) {
