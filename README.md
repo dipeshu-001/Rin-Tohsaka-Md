@@ -6,7 +6,7 @@
 
 <h2>🎐 Rin-Tohsaka 🎐 </h2>
   
-<a href='https://github.com/Toshi-san001/Rin-Tohsaka/releases' a>
+<a href='https://github.com/Toshi-san001/Rin-Tohsaka/releases'
   
 <img src='https://img.shields.io/github/v/release/Toshi-san001/Rin-Tohsaka?color=%231e81b0&label=version&style=for-the-badge'>
   
