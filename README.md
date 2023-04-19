@@ -59,4 +59,4 @@
 
  ## 🎐 License
 
- Quantum-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE).
+ Rin-Tohsaka is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE).
