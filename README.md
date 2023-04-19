@@ -7,8 +7,8 @@
 <h2>🎐 Rin-Tohsaka 🎐 </h2>
   
 
-  
-<img src='https://img.shields.io/github/v/release/Toshi-san001/Rin-Tohsaka?color=%231e81b0&label=version&style=for-the-badge'>
+
+
   
 </a>
   
