@@ -4,7 +4,7 @@
 
 <div align='center'>
 
-<h2> Quantum-Botto </h2>
+<h2>🎐 Rin-Tohsaka 🎐 </h2>
   
 <a href='https://github.com/Toshi-san001/Rin-Tohsaka/releases' a>
   
