@@ -12,7 +12,7 @@
   "repository": "https://github.com/Toshi-san001/Rin-Tohsaka",
   "success_url": "/",
   "env": {
-    "BOT_NAME": {
+    "NAME": {
         "description": "Name of your bot"
     },
     "PREFIX": {
