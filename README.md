@@ -5,28 +5,47 @@
 <div align='center'>
 
 <h2>🎐 Rin-Tohsaka 🎐 </h2>
+  
 
 
 
-
-
+  
 </a>
-
+  
 <a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
-
+  
 <img src='https://img.shields.io/github/license/Toshi-san001/Rin-Tohsaka?color=%231e81b0&style=for-the-badge'>
-
+  
 </a>
+  
+</div>
 
-	@@ -30,7 +30,7 @@
+---
 
+<div align='center'>
+  
+## Deploy
+  
+<a href='https://heroku.com/deploy'>
+  
 <img src='https://www.herokucdn.com/deploy/button.png'>
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pkm7bu?referralCode=3ez0Ta)
-
+  
 </a>
+  
+</div>
 
-	@@ -49,8 +49,8 @@
+---
+
+## ♦️ Preview
+
+ - Fully Modular Design
+ - Written in [JavaScript](https://www.javascript.com/)
+ - Built with [Baileys](https://github.com/adiwajshing/baileys) (A Lightweight full-featured WhatsApp Library)
+ - Powered by [ExpressJs](https://expressjs.com/)
+ - Database handled via [MongoDB](https://www.mongodb.com/)
+ - Self-Auth restoration
 
  ## 📙 Guide
 
@@ -35,7 +54,8 @@
 
  ## 💪 Contributing
 
-	@@ -59,4 +59,4 @@
+ - Feel free to open issues regarding any problems or if you have any feature requests
+ - Make sure to follow the ESLint Rules while editing the code and run `yarn format` before opening Pull request
 
  ## 🎐 License
 
