@@ -1,0 +1,40 @@
+const RedditImageFetcher = require("reddit-image-fetcher");
+const Command = require('../../Structures/Command')
+const Message = require('../../Structures/Message')
+
+module.exports = class command extends Command {
+    constructor() {
+        super('reddit', {
+            description: 'Send image from reddit',
+            category: 'utils',
+            usage: 'reddit [query]',
+            exp: 20,
+            cooldown: 20
+        })
+    }
+
+    /**
+     * @param {Message} m
+     * @param {import('../../Handlers/Message').args} args
+     * @returns {Promise<void>}
+     */
+
+    execute = async (m, args) => {
+
+        let {context} = args
+        let text = context
+        RedditImageFetcher.fetch({
+            type: 'custom',
+            total: 1, 
+            addSubreddit:text
+
+        }).then(result => {
+            console.log(result);
+            let akusingle = result[0]
+            return void (this.client.sendMessage(m.from,{image:{url:akusingle.image}},{quoted: m.message}))
+        })
+        .catch(err => {
+            m.reply ("*⚠ Error subreddit isn't valid*")
+        })
+    }
+}
