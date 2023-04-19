@@ -16,7 +16,7 @@ const helper = new Helper({
     prefix: process.env.PREFIX || '+',
     name: process.env.NAME || '',
     mods: (process.env.MODS || '').split(', ').map((jid) => `${jid}@s.whatsapp.net`),
-    session: process.env.SESSION || 'SESSION',
+    session: process.env.SESSION || '',
     PORT: Number(process.env.PORT || 3000)
 })
 

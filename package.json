@@ -1,5 +1,5 @@
 {
-  "name": "ani",
+  "name": "Rin-Tohsaka",
   "version": "0.0.1",
   "description": "A WhatsApp bot written in JavaScript using Baileys",
   "author": "Toshi-san001 & Eximinati",
@@ -11,20 +11,21 @@
   "license": "AGPL-3.0",
   "scripts": {
     "format": "prettier --write --config .prettierrc.json \"src/**/*.js\"",
-    "start": "node --max-old-space-size=4096 src/bot.js"
+    "start": "nodemon --max-old-space-size=4096 src/bot.js"
   },
   "bugs": {
-    "url": "https://github.com/Quntam-realm/Quntam-Botto/issues"
+    "url": "https://github.com/Toshi-san001/Rin-Tohsaka/issues"
   },
-  "homepage": "https://github.com/Quntam-realm/Quntam-Botto",
+  "homepage": "https://github.com/Toshi-san001/Rin-Tohsaka",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Quntam-realm/Quntam-Botto.git"
+    "url": "https://github.com/Toshi-san001/Rin-Tohsaka.git"
   },
   "dependencies": {
     "@adiwajshing/baileys": "https://github.com/Eximinati/Baileys.git",
     "@adiwajshing/eslint-config": "https://github.com/adiwajshing/eslint-config.git",
     "@adiwajshing/keyed-db": "^0.2.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@hapi/boom": "^10.0.0",
     "@shineiichijo/marika": "^2.0.3",
     "axios": "^0.27.2",
@@ -36,6 +37,7 @@
     "link-preview-js": "^2.1.15",
     "moment-timezone": "^0.5.34",
     "mongoose": "^6.3.5",
+    "node-id3": "^0.2.6",
     "openai": "^3.2.1",
     "parse-ms": "^3.0.0",
     "path": "^0.12.7",
@@ -45,6 +47,8 @@
     "qrcode-terminal": "^0.12.0",
     "reddit-image-fetcher": "^2.0.11",
     "unofficial-carbon-now": "^1.0.6",
-    "wa-sticker-formatter": "^4.3.2"
+    "wa-sticker-formatter": "^4.3.2",
+    "youtube-yts": "^2.0.0",
+    "youtubedl-core": "^4.11.4"
   }
 }
