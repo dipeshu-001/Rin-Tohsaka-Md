@@ -8,13 +8,13 @@
   
 <a href='https://github.com/Quantum-realm/Quantum-Botto/releases'>
   
-<img src='https://img.shields.io/github/v/release/Quantum-realm/Quantum-Botto?color=%231e81b0&label=version&style=for-the-badge'>
+<img src='https://img.shields.io/github/v/release/Toshi-san001/Rin-Tohsaka?color=%231e81b0&label=version&style=for-the-badge'>
   
 </a>
   
-<a href='https://github.com/Quantum-realm/Quantum-Botto/blob/master/LICENSE'>
+<a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
   
-<img src='https://img.shields.io/github/license/Quantum-realm/Quantum-Botto?color=%231e81b0&style=for-the-badge'>
+<img src='https://img.shields.io/github/license/Toshi-san001/Rin-Tohsaka?color=%231e81b0&style=for-the-badge'>
   
 </a>
   
@@ -59,4 +59,4 @@
 
  ## 🎐 License
 
- Quantum-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Quantum-realm/Quantum-Botto/blob/master/LICENSE).
+ Quantum-Botto is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE).
