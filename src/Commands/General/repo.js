@@ -20,7 +20,7 @@ module.exports = class command extends Command {
 
     execute = async (m, args) => {
             try {
-                let repoInfo = await axios.get('https://api.github.com/repos/Eximinati/Ari-Ani')
+                let repoInfo = await axios.get('https://api.github.com/repos/Toshi-san001/Rin-Tohsaka')
                 if (!repoInfo) {
                     return void m.reply('Failed to fetch repo information.');
                 }

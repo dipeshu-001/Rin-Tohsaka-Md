@@ -27,9 +27,9 @@ module.exports = class command extends Command {
                 command,
                 data
             }))
-            let text = `👋 Konichiwa! *@${m.sender.jid.split('@')[0]}*, I'm ${
+            let text = `👋🏻 Konichiwa! *@${m.sender.jid.split('@')[0]}*, I'm ${
                 this.helper.config.name}
-            \n♦️ prefix ~> "${this.helper.config.prefix}"\n\nMy simple usable commands are listed below`
+            \n♦️ prefix ~> "${this.helper.config.prefix}"\n\nMy all usable commands are listed below`
             const categories = []
             for (const command of commands) {
                 if (command.data.config.category === 'dev') continue
@@ -66,7 +66,7 @@ module.exports = class command extends Command {
         
      }
         
-emojis = [ '💰','☘️','🧧','🎐','🍁']
+emojis = [ '👾','💰','💈','▶️','🧨','⛩️']
      
 
 }
