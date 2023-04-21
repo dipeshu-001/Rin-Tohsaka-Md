@@ -62,10 +62,3 @@
  Rin-Tohsaka is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE).
  
  
-# Modifiers 
-
-<a href="https://github.com/Toshi-san001"><img src="https://github.com/Eximinati.png?size=100" width="100" height="100"></a> | [![Aku](https://github.com/Eximiniti.png?size=100)](https://github.com/Eximinati) 
----|---
-[Toshi](https://github.com/Toshi-san001)  | [Aku](https://github.com/Eximinati)
-Modifier | Modifier | 
-
