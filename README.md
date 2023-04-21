@@ -63,7 +63,4 @@
  
  
  
- | <a href="https://github.com/Toshi-san001"><img src="https://github.com/Toshi-san001.png?size=100" width="100" height="100"></a> | [![Toshi](https://github.com/Eximinati png?size=100)](https://github.com/Eximinati) |
-| ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [Tshi](https://github.com/Toshi-san001)                                                                                       | [AKU](https://github.com/Eximinati)                                                 |
 
