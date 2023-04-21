@@ -6,7 +6,7 @@ module.exports = class command extends Command {
     constructor() {
         super('info', {
             description: "Displays bot's info",
-            aliases: ['bot'],
+            aliases: ['uptime'],
             category: 'general',
             exp: 100,
             usage: 'info',

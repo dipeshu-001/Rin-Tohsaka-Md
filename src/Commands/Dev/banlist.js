@@ -4,7 +4,7 @@ const Message = require('../../Structures/Message')
 module.exports = class command extends Command {
     constructor() {
         super('banlist', {
-            description: 'Display the banned users',
+            description: 'Display the banned users list',
             dm: true,
             usage: 'banlist',
             category: 'general'
