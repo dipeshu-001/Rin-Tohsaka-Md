@@ -2,12 +2,18 @@ const axios = require('axios').default
 const { tmpdir } = require('os')
 const { promisify } = require('util')
 const { exec } = require('child_process')
+const child_process = require('child_process')
 const { readFile, unlink, writeFile } = require('fs-extra')
 const { Configuration, OpenAIApi } = require('openai')
 const fs = require('fs-extra')
+const sleep =  (ms) =>{
+    return new Promise((resolve) =>{ setTimeout (resolve, ms)})
+    
+    }
+//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
 
 const configuration = new Configuration({
-    apiKey: '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'
+    apiKey: process.env.openAi
 })
 const openai = new OpenAIApi(configuration)
 
@@ -272,21 +278,22 @@ module.exports = class Utils {
       };
 
       /**
-     * @param {Buffer} image
-     * @returns {Promise<Buffer | string>}
-     */
+ * @param {Buffer} image
+ * @returns {Promise<Buffer | string>}
+ */
+
       buffergif = async (image) => {
         const filename = `${Math.random().toString(36)}`;
-        await fs.writeFileSync(`${filename}.gif`, image);
-        child_process.exec(
-          `ffmpeg -i ${filename}.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" bin/${filename}.mp4`
+        await fs.writeFileSync(`${filename}.mp4`, image);
+        await exec(
+          `ffmpeg -i ${filename}.mp4 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" bin/${filename}.mp4`
         );
-        await sleepy(4000);
+        await sleep(4000);
       
-        var buffer5 =  fs.readFileSync(`${filename}.mp4`);
+        var buffer5 =  fs.readFileSync(`${filename}.gif`);
         Promise.all([
-          unlink(`${filename}.mp4`),
           unlink(`${filename}.gif`),
+          unlink(`${filename}.mp4`),
         ]);
         return buffer5;
       };

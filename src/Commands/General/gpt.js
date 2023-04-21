@@ -11,14 +11,14 @@ module.exports = class command extends Command {
             cooldown: 5
         })
     }
-
+    
     /**
      * @param {Message} m
      * @returns {Promise<void>}
      */
 
     execute = async (m , args) => {
-        // if (!client.config.openai.apiKey) return M.reply('You have not provided an OpenAI API key in the config file')
+        if (!process.env.openAi) return m.reply('You have not provided an OpenAI API key in the config file')
         
         let {context} = args
         // const input = args.join(' ')

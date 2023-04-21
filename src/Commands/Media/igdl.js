@@ -23,25 +23,25 @@ module.exports = class command extends Command {
         let {context} = args
         let arg = context
         if (!arg === null)
-      return Miku.sendMessage(
+      return this.client.sendMessage(
         m.from,
-        { text: `Please provide a Instagram Video link !` },
-        { quoted: m }
+        { text: `❌ No Link Provided!` },
+        { quoted: m.message }
       );
     if (!arg.includes("instagram.com"))
       return this.client.sendMessage(
         m.from,
-        { text: `Please provide a valid Instagram Video link !` },
+        { text: `❌ Invalid Link` },
         { quoted: m.message }
       );
     
 
       var queryURL = arg
-      m.reply("*Please wait, Your video is being download..*")
+      m.reply("*Wait. Your video is being downlaoding!*")
       let res = await axios.get("https://fantox001-scrappy-api.vercel.app/instadl?url=" + queryURL)
       const scrappedURL = res.data.videoUrl
       
-      return this.client.sendMessage(m.from, { video: { url: scrappedURL }},{ quoted: m.message } );
+      return this.client.sendMessage(m.from, { video: { url: scrappedURL } ,  caption: 'Here you go '},{ quoted: m.message } );
   }
 }
 

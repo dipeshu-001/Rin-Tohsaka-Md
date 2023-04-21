@@ -24,16 +24,16 @@ module.exports = class command extends Command {
         if (!context)
         return this.client.sendMessage(
           m.from,
-          { text: `Please provide a Tiktok Video link !` },
+          { text: `❌ No Link Provided!` },
           { quoted: m }
         );
 
         if(!context.includes("tiktok")){
-          return m.reply("Please provide a valid Tiktok link!")
+          return m.reply("❌ No Link Provided!")
         }
 
         this.helper.utils.Tiktok(context).then( data => {
-        this.client.sendMessage(m.from, { video: { url: data.watermark },caption:`Downloaded by: *${botName}*`},{ quoted: m.message })
+        this.client.sendMessage(m.from, { video: { url: data.watermark },caption:`*Here you go 😋*`},{ quoted: m.message })
         })
         }
     }

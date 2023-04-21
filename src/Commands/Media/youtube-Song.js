@@ -10,10 +10,11 @@ ffmpeg.setFfmpegPath(ffmpegPath);
 module.exports = class command extends Command {
     constructor() {
         super('play', {
-            description: 'To download a song as mp3 from YouTube link',
-            usage: 'mediafire',
+            description: 'To download a song as mp3 from YouTube link or just by search',
+            usage: 'play [song name] | play [youtuvbe video link]',
             category: 'Media',
             exp: 20,
+            aliases: ['yta'],
             dm: false,
             cooldown: 50
         })
@@ -30,7 +31,7 @@ module.exports = class command extends Command {
         if (!context === null)
       return this.client.sendMessage(
         m.from,
-        { text: `Please provide a YouTube Video link !` },
+        { text: `❌ No Link Provided!` },
         { quoted: m.message }
       );
       const songSerachTerm = context

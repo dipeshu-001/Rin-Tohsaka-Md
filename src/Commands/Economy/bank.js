@@ -25,8 +25,6 @@ module.exports = class command extends Command {
   * Important if pushing username on command
   */
   const { bank, tag } = await this.helper.DB.getUser(m.sender.jid)
-  // const users = await this.helper.DB.user.find({ wallet: { $gt: 0 } }, 'wallet jid -_id').sort({ wallet: -1 }).lean();
-  // const rank = users.findIndex(u => u.jid === m.sender.jid) + 1
   const text = `🏦 *Bank* 🏦\n\n⛩️ *Name: ${m.sender.username}*\n\n 💮 *tag: #${tag}*\n\n🪙 *Gold: ${bank}*`
   return void (await m.reply(text))
 }

@@ -15,12 +15,12 @@ module.exports = class command extends Command {
    }
 
   /**
-     * @param {Message} M
+     * @param {Message} m
      * @returns {Promise<void>}
      */
 
-     execute = async (M) => {
-     if (!this.helper.config.mods.length) return void M.reply('*[UNMODERATED]*')
+     execute = async (m) => {
+     if (!this.helper.config.mods.length) return void m.reply('*[UNMODERATED]*')
      let text ="*❱❱❱❱❱ MODS ❰❰❰❰❰*\n\n"
 
 const mentions = []
@@ -29,6 +29,6 @@ text+= `*❯ @${this.helper.contact.getContact(x).jid.split('@')[0]}*\n`
 mentions.push(this.helper.contact.getContact(x).jid)
 
 })
-        return void this.client.sendMessage(M.from,{text:text, mentions:mentions})
+        return void this.client.sendMessage(m.from,{text:text, mentions:mentions})
     }
 }
