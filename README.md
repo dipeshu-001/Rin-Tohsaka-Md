@@ -32,7 +32,9 @@
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pkm7bu?referralCode=3ez0Ta)
 
-"https://repl.it/github/Toshi-san001/Rin-Tohsaka"><img src="https://img.shields.io/badge/replit-253c99?style=for-the-badge&logo=replit&logoColor=F26207"></a>
+[![Deploy on Railway]
+(https://repl.it/github/Toshi-san001/Rin-Tohsaka"><img src="https://img.shields.io/badge/replit-253c99?style=for-the-badge&logo=replit&logoColor=F26207)
+
 </p>
   
 </a>
