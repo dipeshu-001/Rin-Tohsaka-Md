@@ -65,5 +65,5 @@
  
  | <a href="https://github.com/Toshi-san001"><img src="https://github.com/Toshi-san001.png?size=100" width="100" height="100"></a> | [![TOSHI](https://github.com/Toshi-san001 png?size=100)](https://github.com/Toshi-san001) |
 | ------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
-| [Aku](https://github.com/Eximinati)                                                                                       | [pratyush](https://github.com/pratyush4932)                                                 |
+| [TOSHI](https://github.com/Toshi-san001)                                                                                       | [AKU](https://github.com/Eximinati)                                                 |
 
