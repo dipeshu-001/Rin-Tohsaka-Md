@@ -33,7 +33,7 @@
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/pkm7bu?referralCode=3ez0Ta)
 
 ></a>
-  <a href="https://repl.it/github/Debanjan-San/krypton-WhatsappBot"><img src="https://img.shields.io/badge/replit-253c99?style=for-the-badge&logo=replit&logoColor=F26207"></a>
+  <a href="https://repl.it/github/Toshi-san001/Rin-Tohsaka"><img src="https://img.shields.io/badge/replit-253c99?style=for-the-badge&logo=replit&logoColor=F26207"></a>
 </p>
 
 
