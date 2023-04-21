@@ -1,6 +1,6 @@
 const Command = require('../../Structures/Command')
 const Message = require('../../Structures/Message')
-const Carbon = require('unofficial-carbon-now')
+// const Carbon = require('unofficial-carbon-now')
 
 module.exports = class command extends Command {
     constructor() {

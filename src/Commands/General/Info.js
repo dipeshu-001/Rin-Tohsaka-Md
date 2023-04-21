@@ -10,7 +10,8 @@ module.exports = class command extends Command {
             category: 'general',
             exp: 100,
             usage: 'info',
-            cooldown: 10
+            cooldown: 10,
+            
         })
     }
 

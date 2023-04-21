@@ -12,7 +12,7 @@ module.exports = class command extends Command {
 
             usage: 'ping (--tags=hidden)',
 
-            category: 'moderation',
+            category: 'group',
 
             exp: 35,
 

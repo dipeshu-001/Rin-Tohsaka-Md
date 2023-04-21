@@ -29,6 +29,6 @@ text+= `*❯ @${this.helper.contact.getContact(x).jid.split('@')[0]}*\n`
 mentions.push(this.helper.contact.getContact(x).jid)
 
 })
-        return void this.client.sendMessage(m.from,{text:text, mentions:mentions})
+        return void this.client.sendMessage(m.from,{text:text, mentions:mentions} , {quoted: m.message})
     }
 }

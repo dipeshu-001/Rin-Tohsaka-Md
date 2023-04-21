@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { default: Baileys, DisconnectReason, fetchLatestBaileysVersion } = require('@adiwajshing/baileys')
+const { default: Baileys, DisconnectReason, jidDecode, fetchLatestBaileysVersion } = require('@adiwajshing/baileys')
 const P = require('pino')
 const { Boom } = require('@hapi/boom')
 const qr = require('qr-image')
@@ -57,6 +57,17 @@ const start = async () => {
         const M = await new Message(messages[0], client).simplifyMessage()
         await messageHandler.handleMessage(M)
     })
+
+    client.decodeJid = (jid) => {
+        if (!jid) return jid;
+        if (/:\d+@/gi.test(jid)) {
+          let decode = jidDecode(jid) || {};
+          return (
+            (decode.user && decode.server && decode.user + "@" + decode.server) ||
+            jid
+          );
+        } else return jid;
+      };
 
     client.ws.on('CB:call', async (call) => await callHandler.handleCall(call))
 

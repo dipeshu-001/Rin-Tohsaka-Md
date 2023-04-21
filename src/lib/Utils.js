@@ -1,5 +1,6 @@
 const axios = require('axios').default
 const { tmpdir } = require('os')
+const cheerio = require('cheerio')
 const { promisify } = require('util')
 const { exec } = require('child_process')
 const child_process = require('child_process')
@@ -29,6 +30,26 @@ const clean = (data) => {
 
 module.exports = class Utils {
     constructor() {}
+
+/**
+ * @param {string} code -
+ * @returns {Promise<Buffer>} 
+ */
+
+getCodeImage = async (code) => {
+  try {
+    const url = `https://carbon.now.sh/?code=${encodeURIComponent(code)}`
+    const response = await axios.get(url)
+    const $ = cheerio.load(response.data)
+    const imageUrl = $('#export-container .export-container-main .export-container-bg')[0].attribs['data-src']
+    const imageResponse = await axios.get(imageUrl, { responseType: 'arraybuffer' })
+    const imageData = Buffer.from(imageResponse.data, 'binary')
+    fs.writeFileSync('code.png', imageData)
+    return imageData
+  } catch (error) {
+    console.error(error)
+  }
+}
 
     /**
      * @param {string} query
