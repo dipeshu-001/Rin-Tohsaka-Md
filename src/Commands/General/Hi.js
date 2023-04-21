@@ -28,8 +28,8 @@ module.exports = class command extends Command {
         ]
         let buttonMessageds = {
          image: {url:"https://telegra.ph/file/75368c6fe4abb9d0f2bb9.png"},
-         caption: `Hello! ${m.sender.username}` ,
-         footer: `${process.env.NAME}`,
+         caption: `Hello! *${m.sender.username}*` ,
+         footer: `${this.helper.config.name}`,
          buttons: hello,
          headerType: 4
      }
