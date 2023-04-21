@@ -64,7 +64,7 @@
  
 # Modifiers 
 
-<a href="https://github.com/Toshi-san001"><img src="https://github.com/Toshi-san001.png?size=100" width="100" height="100"></a> | [![Aku](https://github.com/Eximiniti.png?size=100)](https://github.com/Eximinati) 
+<a href="https://github.com/Toshi-san001"><img src="https://github.com/Eximinati.png?size=100" width="100" height="100"></a> | [![Aku](https://github.com/Eximiniti.png?size=100)](https://github.com/Eximinati) 
 ---|---
 [Toshi](https://github.com/Toshi-san001)  | [Aku](https://github.com/Eximinati)
 Modifier | Modifier | 
