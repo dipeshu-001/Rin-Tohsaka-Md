@@ -17,7 +17,7 @@ const helper = new Helper({
     name: process.env.NAME || '',
     mods: (process.env.MODS || '').split(', ').map((jid) => `${jid}@s.whatsapp.net`),
     session: process.env.SESSION || '',
-    PORT: Number(process.env.PORT || 3000)
+    PORT: (process.env.PORT || 3000)
 })
 
 new Server(helper)
