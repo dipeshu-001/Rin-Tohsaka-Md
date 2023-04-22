@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "@adiwajshing/baileys": "https://github.com/Eximinati/Baileys-.git",
+    "@adiwajshing/eslint-config": "https://github.com/Eximinati/eslint-config.git",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@hapi/boom": "^10.0.0",
     "@shineiichijo/marika": "^2.0.3",
