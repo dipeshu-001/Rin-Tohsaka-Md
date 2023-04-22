@@ -65,7 +65,7 @@ module.exports = class command extends Command {
   const { wallet } = await this.helper.DB.getUser(m.sender.jid);
 
 
-  const reward = Math.floor(Math.random() * 200) + 1; // Generate a random reward between 1 and 100
+  const reward = Math.floor(Math.random() * 100) + 1; // Generate a random reward between 1 and 100
   const workIndex = Math.floor(Math.random() * works.length);
   const workStr = works[workIndex];
 
