@@ -44,12 +44,12 @@ module.exports = class command extends Command {
     return void m.reply(`You can claim your daily reward again in ${remainingTime}`);
   }
 
-  const daily = 400;
+  const daily = 1000;
   const newWallet = wallet + daily;
 
   await this.helper.DB.user.updateOne({ jid: m.sender.jid }, { lastdaily: Date.now(), wallet: newWallet });
 
-  return void m.reply(`🎉 Congratulations! You claimed your daily ${daily} gold! 💰`);
+  return void m.reply(`🎉 Congratulations! You claimed your daily ${daily} gold! 🪙`);
 }
 
 }
