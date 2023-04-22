@@ -49,7 +49,12 @@ const schema = new Schema({
 
        }, 
 
-        lastdaily: {
+       lastdaily: {
+       type: Number,
+       required: true,
+       default: 0
+    },
+    lastWorkTime: {
         type: Number,
         required: true,
         default: 0
