@@ -1,4 +1,4 @@
-const ONE_DAY_MS = 86400000;
+const moment = require("moment-timezone");
 
 const Command = require('../../Structures/Command')
 
@@ -59,11 +59,12 @@ module.exports = class command extends Command {
     'Dog'
 ];
   const { wallet , lastWorkTime } = await this.helper.DB.getUser(m.sender.jid);
+  const now = moment.utc(); 
+  const cooldownEnd = moment(lastWorkTime).add(7, 'hours'); 
+  const remainingTime = moment.duration(cooldownEnd.diff(now)); 
 
-  const now = Date.now();
-  if (lastWorkTime && now - lastWorkTime < 4 * ONE_DAY_MS) {
-    const remainingTime = new Date((lastWorkTime + 4 * ONE_DAY_MS) - now);
-    return m.reply(`❌ You need to wait ${remainingTime.getUTCHours()} hours and ${remainingTime.getUTCMinutes()} minutes before working again.`);
+  if (lastWorkTime && now.isBefore(cooldownEnd)) {
+    return m.reply(`❌ You need to wait ${remainingTime.hours()} hours and ${remainingTime.minutes()} minutes before working again.`);
   }
   const reward = Math.floor(Math.random() * 100) + 1; // Generate a random reward between 1 and 100
   const workIndex = Math.floor(Math.random() * works.length);
