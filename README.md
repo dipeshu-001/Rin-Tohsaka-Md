@@ -17,7 +17,9 @@
 <a href="https://github.com/Toshi-san001"><img title="Author" src="https://img.shields.io/badge/Author-Toshi-red.svg?style=for-the-badge&logo=github"></a>
 </p>
 
-
+</a>
+  
+<a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
 
 <br>
 
@@ -27,12 +29,7 @@
     
     
 
-<br>
-
-</a>
-  
-<a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
-  
+<br>  
 <img src='https://img.shields.io/github/license/Toshi-san001/Rin-Tohsaka?color=%231e81b0&style=for-the-badge'>
   
 </a>
