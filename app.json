@@ -1,5 +1,5 @@
 {
-  "name": "WhatsApp-bot",
+  "name": "Rin-Tohsaka",
   "description": "A WhatsApp Bot written in JavaScript using Baileys.",
   "keywords": [
     "bot",
@@ -7,26 +7,26 @@
     "whatsapp-bot",
     "whatsapp-sticker-bot"
   ],
-  "logo": "",
-  "website": "https://github.com/Quantum-realm/Quantum-Botto#readme",
-  "repository": "https://github.com/LuckyYam/WhatsApp-bot.git",
+  "logo": "https://e0.pxfuel.com/wallpapers/522/351/desktop-wallpaper-rin-tohsaka-edits-fatestaynight-fyp-anime.jpg",
+  "website": "https://github.com/Toshi-san001/Rin-Tohsaka#readme",
+  "repository": "https://github.com/Toshi-san001/Rin-Tohsaka.git",
   "success_url": "/",
   "env": {
     "NAME": {
-        "description": "Name of your bot"
+        "description": "Name of your bot ( i.e. Rin Tohsaka )"
     },
     "PREFIX": {
       "description": "Prefix of your bot"
     },
     "SESSION": {
-      "description": "A string for the session to be classified and to get access to the server endpoints"
+      "description": "A string for the session to be classified and to get access to the server endpoints ( Dont Forget / Should be unique )"
     },
     "MODS": {
-      "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
+      "description": "The phone numbers of the users who you want to be mods/admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\" i.e. 923xxxxxx, 91xxxxx) ",
       "required": false
     },
     "MONGO_URI": {
-      "description": "A secret String for Mongodb Connection.(Required)"
+      "description": "A secret String for Mongodb Connection.(Required) i.e: mongodb+srv://Ali:ariani@testicles.vzog1fk.mongodb.net/?retryWrites=true&w=majority"
     }
   },
   "buildpacks": [
