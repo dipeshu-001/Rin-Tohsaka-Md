@@ -1,9 +1,11 @@
-FROM fedora:37
+FROM node:14-alpine
 
 WORKDIR /Rin-Tohsaka
 
-COPY . /Rin-Tohsaka
+COPY package*.json ./
 
-RUN yarn
+RUN yarn install
+
+COPY . .
 
 CMD ["yarn", "start"]
