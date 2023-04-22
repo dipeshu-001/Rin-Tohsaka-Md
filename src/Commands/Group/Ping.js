@@ -1,42 +1,24 @@
 const Command = require('../../Structures/Command')
-
 const Message = require('../../Structures/Message')
 
 module.exports = class command extends Command {
-
     constructor() {
-
         super('ping', {
-
             description: 'Tags all of the members in a group',
-
-            usage: 'ping (--tags=hidden)',
-
+            usage: 'ping | --h',
             category: 'group',
-
             exp: 35,
-
             cooldown: 15,
-
             aliases: ['all', 'tagall', 'everyone']
-
         })
-
     }
-
     /**
-
      * @param {Message} m
-
      * @param {import('../../Handlers/Message').args} args
-
      * @returns {Promise<void>}
-
      */
-
   
-    execute = async (m, args) => {
-        
+    execute = async (m, args) => { 
         let {context} = args ;
 
         const groupMetadata = await this.client.groupMetadata(m.from)
@@ -52,6 +34,9 @@ module.exports = class command extends Command {
             groupMetadata.subject
         }\n🎈 *Members:* ${groupMetadata.participants.length}\n📣 *Tagger: @${send.jid.split('@')[0]}*\n`
 
+        if(context === '--h'){
+            text+= `${context !== '' ? `🧧 *Message: ${context}*\n\n` : ''}`
+        }
         const admins = []
         const members = []
 

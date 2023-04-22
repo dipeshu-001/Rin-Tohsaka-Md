@@ -1,4 +1,4 @@
-const economyJs = require("../../Database/Models/Economy")
+const ONE_DAY_MS = 86400000;
 
 const Command = require('../../Structures/Command')
 
@@ -45,6 +45,12 @@ module.exports = class command extends Command {
   * Important if pushing username on command
 
   */
+
+  const now = Date.now();
+  if (lastWorkTime && now - lastWorkTime < 4 * ONE_DAY_MS) {
+    const remainingTime = new Date((lastWorkTime + 4 * ONE_DAY_MS) - now);
+    return m.reply(`❌ You need to wait ${remainingTime.getUTCHours()} hours and ${remainingTime.getUTCMinutes()} minutes before working again.`);
+  }
   const works =[
     'slave', 
     'engineer', 
@@ -58,7 +64,8 @@ module.exports = class command extends Command {
 ];
   const { wallet } = await this.helper.DB.getUser(m.sender.jid);
 
-  const reward = Math.floor(Math.random() * 200) + 1; // Generate a random reward between 1 and 100
+
+  const reward = Math.floor(Math.random() * 100) + 1; // Generate a random reward between 1 and 100
   const workIndex = Math.floor(Math.random() * works.length);
   const workStr = works[workIndex];
 
