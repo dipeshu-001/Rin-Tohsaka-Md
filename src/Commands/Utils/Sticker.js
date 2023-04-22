@@ -36,8 +36,8 @@ module.exports = class command extends Command {
         const pack = context.split('|')
         const sticker = new Sticker(buffer, {
             categories,
-            pack: pack[1] ? pack[1].trim() : '☘️ Handcrafted for you by',
-            author: pack[2] ? pack[2].trim() : `Jill_Botto ☘️`,
+            pack: pack[1] ? pack[1].trim() : '🎐 Handcrafted for you by',
+            author: pack[2] ? pack[2].trim() : `Rin-Tohsaka 🎐`,
             quality,
             type:
                 flags.includes('--c') || flags.includes('--crop') || flags.includes('--cropped')
