@@ -1,1 +1,1 @@
-web: yarn start
+web: yarn add @adiwajshing/keyed-db && yarn start
