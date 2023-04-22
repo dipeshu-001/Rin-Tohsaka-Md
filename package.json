@@ -22,7 +22,7 @@
     "url": "https://github.com/Toshi-san001/Rin-Tohsaka.git"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "https://github.com/Eximinati/Baileys.git",
+    "@adiwajshing/baileys": "https://github.com/Eximinati/Baileys-.git",
     "@adiwajshing/eslint-config": "https://github.com/adiwajshing/eslint-config.git",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
