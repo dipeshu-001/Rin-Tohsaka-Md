@@ -11,15 +11,7 @@
 <h2>🎐 Rin-Tohsaka 🎐 </h2>
   
 
- 
-</p>
-<p align="center">
-<a href="https://github.com/Toshi-san001"><img title="Author" src="https://img.shields.io/badge/Author-Toshi-red.svg?style=for-the-badge&logo=github"></a>
-</p>
 
-</a>
-  
-<a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
 
 <br>
 
@@ -29,7 +21,12 @@
     
     
 
-<br>  
+<br>
+
+</a>
+  
+<a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
+  
 <img src='https://img.shields.io/github/license/Toshi-san001/Rin-Tohsaka?color=%231e81b0&style=for-the-badge'>
   
 </a>
@@ -78,6 +75,16 @@
 
  - Feel free to open issues regarding any problems or if you have any feature requests
  - Make sure to follow the ESLint Rules while editing the code and run `yarn format` before opening Pull request
+
+
+## 🧧 Quantum 🧧
+
+> This is a open source project by the TEAM Quantum. After forking If you change any codes and claim That's yours then Our Team will Take Action In that case so be careful and give Credit To The original Devloper of that Bot. if you Have any Questions Then Join Our support Group To Report Your Issues.
+
+
+## HELP
+
+> Please give this repo a ⭐ if you liked it.
 
 
 ##  🚀 Our Amazing Contributors
