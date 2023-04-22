@@ -30,7 +30,7 @@
   
 ## Deploy
       
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Eximinati/Ari-Ani)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Toshi-san001/Rin-Tohsaka)
   
 <img src='https://www.herokucdn.com/deploy/button.png'>
 
