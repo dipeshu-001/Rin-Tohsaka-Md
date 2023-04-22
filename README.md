@@ -18,7 +18,17 @@
 </p>
 
 
-  
+
+<br>
+
+<p align="center">
+  <a href="https://github.com/Toshi-san001/Rin-Tohsaka/fork">
+    <img src="https://img.shields.io/github/forks/Toshi-san001/Rin-Tohsaka?label=Fork&style=social">
+    
+    
+
+<br>
+
 </a>
   
 <a href='https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE'>
