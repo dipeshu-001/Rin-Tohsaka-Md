@@ -70,6 +70,13 @@
  - Feel free to open issues regarding any problems or if you have any feature requests
  - Make sure to follow the ESLint Rules while editing the code and run `yarn format` before opening Pull request
 
+
+##  🚀 Our Amazing Contributors
+
+<a href="https://github.com/Toshi-san001/Rin-Tohsaka/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Toshi-san001/Rin-Tohsaka" />
+</a>
+
  ## 🎐 License
 
  Rin-Tohsaka is free and open-source software licensed under the [GNU Affero General Public License v3.0](https://github.com/Toshi-san001/Rin-Tohsaka/blob/master/LICENSE).
