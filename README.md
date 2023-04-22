@@ -11,6 +11,11 @@
 <h2>🎐 Rin-Tohsaka 🎐 </h2>
   
 
+ 
+</p>
+<p align="center">
+<a href="https://github.com/Toshi-san001"><img title="Author" src="https://img.shields.io/badge/Author-Toshi-red.svg?style=for-the-badge&logo=github"></a>
+</p>
 
 
   
