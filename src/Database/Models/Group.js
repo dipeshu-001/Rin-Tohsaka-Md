@@ -23,6 +23,16 @@ const schema = new Schema({
         type: Boolean,
         required: true,
         default: false
+    },
+    CharacterData: { 
+        type: Boolean,
+        required: true, 
+        default: false 
+    },
+    wild: { 
+        type: Boolean, 
+        required: true, 
+        default: false 
     }
 })
 

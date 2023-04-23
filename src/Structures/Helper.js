@@ -25,6 +25,8 @@ module.exports = class Helper {
 
     DB = new Database()
 
+
+
     /**
      * @type {Map<string, Buffer>}
      */

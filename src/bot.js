@@ -92,6 +92,10 @@ const start = async () => {
                 helper.log('Disconnected')
             }
         }
+        // if (connection === 'open') {
+        //     messageHandler.groups =  client.groupFetchAllParticipating()
+        //      messageHandler.loadCharaEnabledGroups()
+        // }
         if (connection === 'connecting') {
             helper.state = 'connecting'
             helper.log('Connecting to WhatsApp...')

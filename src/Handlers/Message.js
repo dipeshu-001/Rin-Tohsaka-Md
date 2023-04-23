@@ -5,6 +5,8 @@ const Message = require('../Structures/Message')
 const Helper = require('../Structures/Helper')
 const Command = require('../Structures/Command')
 const { Stats } = require('../lib')
+const { ICharacter, Character } = require('@shineiichijo/marika');
+
 
 module.exports = class MessageHandler {
     /**
@@ -22,38 +24,90 @@ module.exports = class MessageHandler {
         this.helper = helper
     }
 
-    spawnPokemon = async () => {
-        cron.schedule("*/2 * * * *", async () => {
-          const Data = await await this.client.getFeatures("pokemon");
-          if (Data.id === "000") return void null;
-          const p = Math.floor(Math.random() * Data.jids.length);
-          const q = await this.client.getGroupData(Data.jids[p]);
-          if (!q.wild || q.bot !== this.client.user.name) return void null;
-          const i = Math.floor(Math.random() * 898);
-          const y = Math.floor(Math.random() * 100);
-          const { data } = await axios.get(
-            `https://pokeapi.co/api/v2/pokemon/${i}`
-          );
-          const buffer = await this.client.getBuffer(
-            `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`
-          );
-          await this.client.DB.group.updateMany(
-            { jid: Data.jids[p] },
-            {
-              $set: {
-                catchable: true,
-                lastPokemon: data.name,
-                pId: data.id,
-                pLevel: y,
-                pImage: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${data.id}.png`,
-              },
+//     loadCharaEnabledGroups = async ()=> {
+//        const getGroups = await this.client.groupFetchAllParticipating()
+//     //     const groups = Object.entries(getGroups)
+//     //         .slice(0)
+//     //         .map((entry) => entry[1])
+//     //     let lengthOfCharacter = this.helper.DB.group.CharacterData
+//     //     // const groups = !this.groups ? await this.client.groupFetchAllParticipating() : this.groups
+//     //     if (!groups) return void null // add this check
+//     //     for (const group of groups) {
+//     //         lengthOfCharacter.push(group)
+//     //     }
+//     //     this.client.log(
+//     //         `Successfully loaded ${chalk.blueBright(`${lengthOfCharacter.length}`)} ${
+//     //             lengthOfCharacter.length > 1 ? 'groups' : 'group'
+//     //         } which has enabled chara`
+//     //     )
+//     //     await this.spawnChara()
+//     // }
+//      let getAllGroups = Object.keys(await this.client.groupFetchAllParticipating());
+
+//     //  let characterOfMe = this.helper.DB.group.CharacterData
+//     const characterOfMe = this.helper.DB.characterData
+
+
+//     const groups = await getAllGroups
+//     for (const group of groups) {
+//         const data = await this.helper.DB.getGroup(group)
+//         if (!data.chara) continue
+//         this.helper.DB.group.CharacterData.push(group)
+//     }
+//     this.client.log(
+//         `Successfully loaded ${chalk.blueBright(`${characterOfMe.length}`)} ${
+//             characterOfMe.length > 1 ? 'groups' : 'group'
+//         } which has enabled chara`
+//     )
+//     await this.spawnChara()
+// }
+
+   spawnChara = async () => {
+        schedule('*/1 * * * *', async () => {
+            if (this.helper.DB.group.CharacterData.length < 1) return void null
+            for (let i = 0; i < this.helper.DB.group.CharacterData.length; i++) {
+                setTimeout(async () => {
+                    const { chara, bot } = await this.helper.DB.getGroup(this.helper.DB.group.wild[i])
+                    if (bot !== 'all' && bot !== process.env.NAME.split(' ')[0]) return void null
+                    if (!chara) return void null
+                    await new Character()
+                        .getRandomCharacter()
+                        .then(async (chara) => {
+                            const price = Math.floor(Math.random() * (50000 - 25000) + 25000)
+                            let source = ''
+                            await new Character()
+                                .getCharacterAnime(chara.mal_id)
+                                .then((res) => (source = res.data[0].anime.title))
+                                .catch(async () => {
+                                    await new Character()
+                                        .getCharacterManga(chara.mal_id.toString())
+                                        .then((res) => (source = res.data[0].manga.title))
+                                        .catch(() => {})
+                                })
+                            const buffer = await this.helper.utils.getBuffer(chara.images.jpg.image_url)
+                            const buttons = [
+                                {
+                                    buttonId: 'id1',
+                                    buttonText: { displayText: `${process.env.PREFIX}claim` },
+                                    type: 1
+                                }
+                            ]
+                            const buttonMessage = {
+                                image: buffer,
+                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n💮 *Source: ${source}*\n\n🪙 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`,
+                                footer: '',
+                                buttons: buttons,
+                                headerType: 4
+                            }
+                            this.charaResponse.set(this.helper.DB.group.CharacterData[i], { price, data: chara })
+                            await this.client.sendMessage(this.helper.DB.group.CharacterData[i], buttonMessage)
+                        })
+                        .catch(() => {})
+                }, (i + 1) * 20 * 1000)
             }
-          );
-          await this.client.sendMessage(Data.jids[p], buffer, MessageType.image, {
-            caption: `A wild pokemon appeared! Use ${this.client.config.prefix}catch  <pokemon name> to catch this pokemon.`,
-          });
         })
     }
+
     /**
      * @param {Message} m
      * @returns {Promise<void>}
@@ -205,9 +259,23 @@ module.exports = class MessageHandler {
     cooldowns = new Map()
 
     /**
+ * @typedef {Object} CharacterResponse
+ * @property {number} price - The price of the character.
+ * @property {ICharacter} data - The character data.
+ */
+
+/**
+ * @type {Map<string, CharacterResponse>}
+ */
+ charaResponse = new Map();
+
+
+
+    /**
      * @param {{group: string, jid: string}} options
      * @returns {Promise<boolean>}
      */
+    
 
     isAdmin = async (options) => {
         const data = (await this.client.groupMetadata(options.group)).participants
