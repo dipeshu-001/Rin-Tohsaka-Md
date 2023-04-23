@@ -7,8 +7,7 @@ module.exports = class command extends Command {
         super('weather', {
             description: 'Converts image/video/gif to sticker',
             category: 'utils',
-            usage: 'sticker [caption/quote message containing media] [options] | <pack> | <author>',
-            aliases: ['s'],
+            usage: 'weather <name>',
             cooldown: 10
         })
     }

@@ -5,7 +5,7 @@
 */
 const ONE_DAY_MS = 86400000;
 
-const economyJs = require("../../Database/Models/Economy")
+const moment = require("moment-timezone")
 
 const Command = require('../../Structures/Command')
 
@@ -54,12 +54,15 @@ module.exports = class command extends Command {
   */
 
  
-  const { wallet, lastWorkTime } = await this.helper.DB.getUser(m.sender.jid);
+  const { wallet, lastBegTime } = await this.helper.DB.getUser(m.sender.jid);
 
-  const now = Date.now();
-  if (lastWorkTime && now - lastWorkTime < 2 * ONE_DAY_MS) {
-    const remainingTime = new Date((lastWorkTime + 4 * ONE_DAY_MS) - now);
-    return m.reply(`❌ You need to wait ${remainingTime.getUTCHours()} hours and ${remainingTime.getUTCMinutes()} minutes before working again.`);
+  const now = moment.utc(); // Define now using moment.utc() for UTC time
+  if (lastBegTime) {
+    const timeDiff = moment.duration(now.diff(lastBegTime)).asHours();
+    if (timeDiff < 24) {
+      const timeRemaining = moment.utc(moment.duration(1 - timeDiff, 'hours').asMilliseconds()).format('HH:mm:ss');
+      return m.reply(`${m.sender.username} have already claimed his daily reward. You can claim again in ${timeRemaining}.`);
+    }
   }
 const users = await this.helper.DB.user.find({ $or: [ { wallet: { $gt: 0 } }, { bank: { $gt: 0 } } ] }, 'wallet bank jid -_id').sort({ wallet: -1, bank: -1 }).lean()
 const rank = users.findIndex(u => u.jid === m.sender.jid) + 1;
@@ -74,7 +77,7 @@ if (reward >= 50) {
 }
 
 const newBank = wallet + reward;
-await this.helper.DB.user.updateOne({ jid: m.sender.jid }, { $set: { wallet: newBank } });
+await this.helper.DB.user.updateOne({ jid: m.sender.jid }, { wallet: newBank  , lastBegTime: now} );
 
 return void (await m.reply(text));
 

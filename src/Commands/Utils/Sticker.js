@@ -24,7 +24,7 @@ module.exports = class command extends Command {
             return void m.reply('Provide an image/gif/video by captioning it as a message or by quoting it')
         let buffer
         if (m.hasSupportedMediaMessage) buffer = await m.downloadMediaMessage(m.message.message)
-        else if (m.quoted && m.quoted.hasSupportedMediaMessage) buffer = await m.downloadMediaMessage(M.quoted.message)
+        else if (m.quoted && m.quoted.hasSupportedMediaMessage) buffer = await m.downloadMediaMessage(m.quoted.message)
         let { flags, context } = args
         flags.forEach((flag) => (context = context.replace(flag, '')))
         const numbersFlag = this.helper.utils

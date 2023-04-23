@@ -20,44 +20,44 @@ const schema = new Schema({
     },
 
     tag: String,
-
-        level: {
+    level: {
         type: Number,
         required: true,
         default: 1
         
-        },
-        
-      bank: {
-        type: Number,
-        required: true,
-        default: 0
-
-       },
-    
-        wallet: {
-        type: Number,
-        required: true,
-        default: 0
-
-       },
-            
-        lastRob: {
-        type: Number,
-        required: true,
-        default: 0
-
-       }, 
-
-       lastdaily: {
-       type: Number,
-       required: true,
-       default: 0
     },
-    lastWorkTime: {
+        
+    bank: {
         type: Number,
         required: true,
         default: 0
+
+    },
+    
+    wallet: {
+        type: Number,
+        required: true,
+        default: 0
+
+    },
+            
+    lastRob: {
+        type: Number,
+        required: true,
+        default: 0
+
+    }, 
+    lastDaily: { 
+        type: Date, 
+        default: null 
+    },
+    lastBegTime: { 
+        type: Date, 
+        default: null 
+    },
+      lastWork: { 
+        type: Date, 
+        default: null 
     }
 })
 

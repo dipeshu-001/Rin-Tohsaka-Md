@@ -42,7 +42,7 @@ const start = async () => {
         printQRInTerminal: true,
         auth: state,
         logger: P({ level: 'fatal' }),
-        browser: ['Toshu_Bot', 'fatal', '5.0.0']
+        browser: ['Quantam', 'fatal', '1.0.0']
     })
 
     const messageHandler = new MessageHandler(client, helper)
