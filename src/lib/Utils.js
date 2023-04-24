@@ -326,13 +326,13 @@ getCodeImage = async (code) => {
  */
 buffergif = async (image) => {
     const filename = `${Math.random().toString(36)}`
-    await fs.writeFileSync(`./${filename}.gif`, image)
+    await fs.writeFileSync(`./assets/${filename}.gif`, image)
     child_process.exec(
-        `ffmpeg -i ./${filename}.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ./dustbin/${filename}.mp4`
+        `ffmpeg -i ./assets/${filename}.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ./assets/${filename}.mp4`
     ) 
     await sleep(4000)
-    const buffer5 = await fs.readFileSync(`./${filename}.mp4`)
-    Promise.all([unlink(`./${filename}.mp4`), unlink(`./${filename}.gif`)])
+    const buffer5 = await fs.readFileSync(`./assets/${filename}.mp4`)
+    Promise.all([unlink(`./${filename}.mp4`), unlink(`./assets/${filename}.gif`)])
     return buffer5
 }
 
