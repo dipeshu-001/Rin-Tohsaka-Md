@@ -29,7 +29,7 @@ Need help with using the bot? Join our official support group on WhatsApp! Our c
 🌟 *GitHub Repository*
 You can also check out our GitHub repository for the bot's source code, report bugs, and suggest new features. Don't forget to give us a star if you find the bot useful!
 
-📂 *Repository Link*:  https://github.com/Toshi-san001/Rin-Tohsaka
+📂 *Repository Link*:  https://github.com/Toshi-san001/Rin-Tohsaka`
         await this.client.sendMessage(
             m.sender.jid,
             {
