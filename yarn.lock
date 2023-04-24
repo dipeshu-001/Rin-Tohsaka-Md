@@ -2666,11 +2666,6 @@ link-preview-js@^2.1.15:
     cross-fetch "3.1.5"
     url "0.11.0"
 
-lodash@^4.17.21:
-  version "4.17.21"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
-  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
-
 long@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
@@ -2887,7 +2882,7 @@ mongodb@4.14.0:
     "@aws-sdk/credential-providers" "^3.186.0"
     saslprep "^1.0.3"
 
-mongoose@^6.3.5, mongoose@^6.6.1:
+mongoose@^6.3.5:
   version "6.10.5"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.10.5.tgz#4d027269b5fcb86f1d40ce1c188d5774bd080480"
   integrity sha512-y4HL4/9EySec7L0gJ+pCm9heLSF45uIIvRS4fSeAFWDfe4vXW1vRZJwTz7OGkra3ZoSfRnFTo9bNZkuggDVlVA==
@@ -3430,15 +3425,6 @@ quick-format-unescaped@^4.0.3:
   resolved "https://registry.yarnpkg.com/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz#93ef6dd8d3453cbc7970dd614fad4c5954d6b5a7"
   integrity sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==
 
-quickmongo@^5.2.0:
-  version "5.2.0"
-  resolved "https://registry.yarnpkg.com/quickmongo/-/quickmongo-5.2.0.tgz#768647dd63098f1781fbdae0a437d733be2d88f3"
-  integrity sha512-+jaNZyXZIaeOxn7TnY29yNuCts+yKLe5yfISVj68ivqMwW+jF6d0+3PWIkSeKfc1gJE3M4qmO1LzK1Ck+ItOog==
-  dependencies:
-    lodash "^4.17.21"
-    mongoose "^6.6.1"
-    tiny-typed-emitter "^2.1.0"
-
 range-parser@~1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/range-parser/-/range-parser-1.2.1.tgz#3cf37023d199e1c24d1a55b84800c2f3e6468031"
@@ -3975,11 +3961,6 @@ timers-ext@0.1, timers-ext@^0.1.7:
   dependencies:
     es5-ext "~0.10.46"
     next-tick "1"
-
-tiny-typed-emitter@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/tiny-typed-emitter/-/tiny-typed-emitter-2.1.0.tgz#b3b027fdd389ff81a152c8e847ee2f5be9fad7b5"
-  integrity sha512-qVtvMxeXbVej0cQWKqVSSAHmKZEHAvxdF8HEUBFWts8h+xEo5m/lEiPakuyZ3BnCBjOD8i24kzNOiOLLgsSxhA==
 
 to-regex-range@^5.0.1:
   version "5.0.1"
