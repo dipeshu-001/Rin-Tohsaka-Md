@@ -12,9 +12,6 @@ const CallHandler = require('./Handlers/Call')
 const Helper = require('./Structures/Helper')
 const Server = require('./Structures/Server')
 const Auth = require('./Structures/Auth')
-const {Database} = require('quickmongo');
-global.db = new Database("mongodb+srv://Ali:ariani@testicles.vzog1fk.mongodb.net/?retryWrites=true&w=majority");
-
 
 const helper = new Helper({
     prefix: process.env.PREFIX || '+',
@@ -32,13 +29,7 @@ const start = async () => {
     }
 
     await mongoose.connect(process.env.MONGO_URI)
-    db.on("ready", () => {
-        console.log("Connected to the database 69");
-     
-    });
     
-    // top-level awaits
-    await db.connect(); 
     helper.log('Connected to the Database')
 
     const { useAuthFromDatabase } = new Auth(helper.config.session)
