@@ -1,17 +1,18 @@
 const Command = require('../../Structures/Command')
 const Message = require('../../Structures/Message')
 
- module.exports = class command extends Command {
-  constructor() {
+module.exports = class command extends Command {
+   constructor() {
      super('claim', {
-     description: "Claims the character",
-     category: 'economy',
+     description: "Displays the bot's usable commands",
+     category: 'character',
      exp: 20,
      usage: 'claim',
+     aliases: ['c'],
      cooldown: 10
 
         })
-  }
+   }
 
   /**
   * @param {Message} m
@@ -47,3 +48,4 @@ const Message = require('../../Structures/Message')
    await m.reply(`Congratulations! You have claimed ${chara} and saved its image to your gallery.`)
  }
 }
+
