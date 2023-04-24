@@ -71,7 +71,7 @@ module.exports = class command extends Command {
        
             const buffer = Buffer.from(response.data, "utf-8")
        
-            var sgif = await this.helper.utils.buffergif(buffer)
+            var sgif = await this.helper.utils.gifToMp4(buffer)
        
             client.sendMessage(m.from,{video: sgif, gifPlayback:true,mentions:ment,caption:mentioneduser},{quoted:m.message})
       
