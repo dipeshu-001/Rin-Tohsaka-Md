@@ -4,8 +4,6 @@
 
 */
 
-const economyJs = require("../../Database/Models/Economy")
-
 const Command = require('../../Structures/Command')
 
 const Message = require('../../Structures/Message')

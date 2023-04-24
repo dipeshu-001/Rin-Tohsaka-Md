@@ -58,7 +58,36 @@ const schema = new Schema({
       lastWork: { 
         type: Date, 
         default: null 
-    }
+    },
+
+
+    /////////////////Character Game\\\\\\\\\\\\\\\\\\\\
+
+    mal_id: {
+        type: Number,
+        required: true
+      },
+      url: {
+        type: String,
+        required: true
+      },
+      name: {
+        type: String,
+        required: true
+      },
+      nicknames: {
+        type: [String],
+        required: true,
+        default: []
+      },
+      about: {
+        type: String,
+        required: true
+      },
+      favorites: {
+        type: Number,
+        required: true
+      }
 })
 
 module.exports = model('userschema', schema)

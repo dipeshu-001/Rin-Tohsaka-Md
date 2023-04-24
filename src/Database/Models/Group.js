@@ -24,15 +24,21 @@ const schema = new Schema({
         required: true,
         default: false
     },
-    CharacterData: { 
-        type: Boolean,
-        required: true, 
-        default: false 
-    },
+
     wild: { 
-        type: Boolean, 
-        required: true, 
-        default: false 
+        type: String,
+        required: true,
+    },
+
+    price: {
+        type: Number,
+        required: true,
+        default: 0
+    },
+
+    chara: {
+        type: String,
+        required: false
     }
 })
 

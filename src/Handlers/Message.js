@@ -27,20 +27,17 @@ module.exports = class MessageHandler {
    spawnChara = async () => {
     try {
         setInterval(async () => {
-            const chara=await db.get('chara')
-            global.char= chara || []   
             // let groups = await db.get('chara') || []  groups[Math.floor(Math.random() * groups.length)]
             let gc = '120363110747479694@g.us'
             let stars = ["⭐️⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️"]
             let count = stars[Math.floor(Math.random() * stars.length)]
             const price = Math.floor(Math.random() * (50000 - 25000) + 25000);
-            await db.set(`chara_p_${gc}`, price)
-            const {
-                data
-            } = await axios.get(
-                `https://reina-api.vercel.app/api/mwl/random`
-            )
-            await db.set(`${gc}_chara`, data.data.slug)
+            // await db.set(`chara_p_${gc}`, price) 2: await db.set(`${gc}_chara`, data.data.slug)
+            const {data} = await axios.get(`https://reina-api.vercel.app/api/mwl/random`)
+            let imageData = data.data.image
+            console.log(imageData)
+            await this.helper.DB.group.updateOne({ jid: gc }, { price: price, chara: data.data.slug , wild: imageData});
+
             let des = ''
             try {
                 des += data.data.description.substring(0, 100)
@@ -56,10 +53,11 @@ module.exports = class MessageHandler {
                 caption: `A Claimable character appeared!\n\🏮 *Name: ${data.data.name}*\n\n *STARS➡️${count}⬅️*\n\n📑 *About:* ${des}\n\n*Source:* ${data.data.appearances[0].name}\n\n*Price:* ${price}\n\n\nUse #claim to claim the character`
             })
             setTimeout(async () => {
-                await db.delete(`${gc}_chara`)
+                await this.helper.DB.group.updateOne({ jid: gc }, { $unset: { chara: 1 }, price: 0 });
+
                 console.log("deleted")
-            }, 3 * 60 * 1000);
-        }, 10 * 60 * 1000)
+            }, 3 * 60 * 1000); //  3 * 60 * 1000) #will delete after 3 minutes
+        }, 10 * 60 * 1000) //  1 * 60 * 1000) #will send after 1 minutes
     } catch (e) {
         console.log(e)
 
