@@ -3,6 +3,7 @@ const { default: Baileys, DisconnectReason, jidDecode, fetchLatestBaileysVersion
 const P = require('pino')
 const { Boom } = require('@hapi/boom')
 const qr = require('qr-image')
+const axios = require('axios')
 const mongoose = require('mongoose')
 const Message = require('./Structures/Message')
 const MessageHandler = require('./Handlers/Message')
@@ -11,6 +12,9 @@ const CallHandler = require('./Handlers/Call')
 const Helper = require('./Structures/Helper')
 const Server = require('./Structures/Server')
 const Auth = require('./Structures/Auth')
+const {Database} = require('quickmongo');
+global.db = new Database("mongodb+srv://Ali:ariani@testicles.vzog1fk.mongodb.net/?retryWrites=true&w=majority");
+
 
 const helper = new Helper({
     prefix: process.env.PREFIX || '+',
@@ -28,7 +32,13 @@ const start = async () => {
     }
 
     await mongoose.connect(process.env.MONGO_URI)
-
+    db.on("ready", () => {
+        console.log("Connected to the database 69");
+     
+    });
+    
+    // top-level awaits
+    await db.connect(); 
     helper.log('Connected to the Database')
 
     const { useAuthFromDatabase } = new Auth(helper.config.session)
@@ -56,6 +66,7 @@ const start = async () => {
     client.ev.on('messages.upsert', async ({ messages }) => {
         const M = await new Message(messages[0], client).simplifyMessage()
         await messageHandler.handleMessage(M)
+        
     })
 
     client.decodeJid = (jid) => {
@@ -92,17 +103,18 @@ const start = async () => {
                 helper.log('Disconnected')
             }
         }
-        // if (connection === 'open') {
-        //     messageHandler.groups =  client.groupFetchAllParticipating()
-        //      messageHandler.loadCharaEnabledGroups()
-        // }
+        
+
+
         if (connection === 'connecting') {
             helper.state = 'connecting'
             helper.log('Connecting to WhatsApp...')
         }
         if (connection === 'open') {
+            
             helper.state = 'open'
             helper.log('Connected to WhatsApp')
+             messageHandler.spawnChara()
         }
     })
 

@@ -2666,6 +2666,11 @@ link-preview-js@^2.1.15:
     cross-fetch "3.1.5"
     url "0.11.0"
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 long@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/long/-/long-4.0.0.tgz#9a7b71cfb7d361a194ea555241c92f7468d5bf28"
@@ -2882,7 +2887,7 @@ mongodb@4.14.0:
     "@aws-sdk/credential-providers" "^3.186.0"
     saslprep "^1.0.3"
 
-mongoose@^6.3.5:
+mongoose@^6.3.5, mongoose@^6.6.1:
   version "6.10.5"
   resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-6.10.5.tgz#4d027269b5fcb86f1d40ce1c188d5774bd080480"
   integrity sha512-y4HL4/9EySec7L0gJ+pCm9heLSF45uIIvRS4fSeAFWDfe4vXW1vRZJwTz7OGkra3ZoSfRnFTo9bNZkuggDVlVA==
@@ -2978,6 +2983,13 @@ node-cache@^5.1.2:
   integrity sha512-t1QzWwnk4sjLWaQAS8CHgOJ+RAfmHpxFWmc36IWTiWHQfs0w5JDMBS1b1ZxQteo0vVVuWJvIUKHDkkeK7vIGCg==
   dependencies:
     clone "2.x"
+
+node-cron@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/node-cron/-/node-cron-3.0.2.tgz#bb0681342bd2dfb568f28e464031280e7f06bd01"
+  integrity sha512-iP8l0yGlNpE0e6q1o185yOApANRe47UPbLf4YxfbiNHt/RU5eBcGB/e0oudruheSf+LQeDMezqC5BVAb5wwRcQ==
+  dependencies:
+    uuid "8.3.2"
 
 node-fetch@2.6.7:
   version "2.6.7"
@@ -3417,6 +3429,15 @@ quick-format-unescaped@^4.0.3:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/quick-format-unescaped/-/quick-format-unescaped-4.0.4.tgz#93ef6dd8d3453cbc7970dd614fad4c5954d6b5a7"
   integrity sha512-tYC1Q1hgyRuHgloV/YXs2w15unPVh8qfu/qCTfhTYamaw7fyhumKa2yGpdSo87vY32rIclj+4fWYQXUMs9EHvg==
+
+quickmongo@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/quickmongo/-/quickmongo-5.2.0.tgz#768647dd63098f1781fbdae0a437d733be2d88f3"
+  integrity sha512-+jaNZyXZIaeOxn7TnY29yNuCts+yKLe5yfISVj68ivqMwW+jF6d0+3PWIkSeKfc1gJE3M4qmO1LzK1Ck+ItOog==
+  dependencies:
+    lodash "^4.17.21"
+    mongoose "^6.6.1"
+    tiny-typed-emitter "^2.1.0"
 
 range-parser@~1.2.1:
   version "1.2.1"
@@ -3955,6 +3976,11 @@ timers-ext@0.1, timers-ext@^0.1.7:
     es5-ext "~0.10.46"
     next-tick "1"
 
+tiny-typed-emitter@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/tiny-typed-emitter/-/tiny-typed-emitter-2.1.0.tgz#b3b027fdd389ff81a152c8e847ee2f5be9fad7b5"
+  integrity sha512-qVtvMxeXbVej0cQWKqVSSAHmKZEHAvxdF8HEUBFWts8h+xEo5m/lEiPakuyZ3BnCBjOD8i24kzNOiOLLgsSxhA==
+
 to-regex-range@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/to-regex-range/-/to-regex-range-5.0.1.tgz#1648c44aae7c8d988a326018ed72f5b4dd0392e4"
@@ -4098,7 +4124,7 @@ utils-merge@1.0.1:
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
-uuid@^8.3.2:
+uuid@8.3.2, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
