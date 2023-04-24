@@ -6,7 +6,7 @@ const { exec } = require('child_process')
 const child_process = require('child_process')
 const { readFile, unlink, writeFile } = require('fs-extra')
 const { Configuration, OpenAIApi } = require('openai')
-const fs = require('fs-extra')
+let fs = require('fs')
 const sleep =  (ms) =>{
     return new Promise((resolve) =>{ setTimeout (resolve, ms)})
     
