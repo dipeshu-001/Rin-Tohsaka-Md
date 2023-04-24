@@ -320,27 +320,22 @@ getCodeImage = async (code) => {
           )
         );
       };
-
-      /**
- * @param {Buffer} image
- * @returns {Promise<Buffer | string>}
+/**
+ * @param {Buffer} image - Buffer containing the image data
+ * @returns {Promise<Buffer>} A Promise that resolves to a Buffer containing the processed GIF data
  */
+buffergif = async (image) => {
+    const filename = `${Math.random().toString(36)}`
+    await fs.writeFileSync(`./${filename}.gif`, image)
+    child_process.exec(
+        `ffmpeg -i ./${filename}.gif -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ./dustbin/${filename}.mp4`
+    ) 
+    await sleep(4000)
+    const buffer5 = await fs.readFileSync(`./${filename}.mp4`)
+    Promise.all([unlink(`./${filename}.mp4`), unlink(`./${filename}.gif`)])
+    return buffer5
+}
 
-      buffergif = async (image) => {
-        const filename = `${Math.random().toString(36)}`;
-        await fs.writeFileSync(`${filename}.mp4`, image);
-        await exec(
-          `ffmpeg -i ${filename}.mp4 -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" bin/${filename}.mp4`
-        );
-        await sleep(4000);
-      
-        var buffer5 =  fs.readFileSync(`${filename}.gif`);
-        Promise.all([
-          unlink(`${filename}.gif`),
-          unlink(`${filename}.mp4`),
-        ]);
-        return buffer5;
-      };
 
     /**
      * @param {Buffer} gif
