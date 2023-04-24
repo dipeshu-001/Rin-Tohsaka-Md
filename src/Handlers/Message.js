@@ -94,7 +94,7 @@ module.exports = class MessageHandler {
                             ]
                             const buttonMessage = {
                                 image: buffer,
-                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n💮 *Source: ${source}*\n\n🪙 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`,
+                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n💮 *Source: ${source}*\n\n🪙 *Price: ${price}*\n\n*[Use ${this.helper.config.prefix}claim to have this character in your gallery]*`,
                                 footer: '',
                                 buttons: buttons,
                                 headerType: 4
