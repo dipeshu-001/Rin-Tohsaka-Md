@@ -48,4 +48,3 @@ module.exports = class command extends Command {
    await m.reply(`Congratulations! You have claimed ${chara} and saved its image to your gallery.`)
  }
 }
-
