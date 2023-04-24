@@ -24,88 +24,47 @@ module.exports = class MessageHandler {
         this.helper = helper
     }
 
-//     loadCharaEnabledGroups = async ()=> {
-//        const getGroups = await this.client.groupFetchAllParticipating()
-//     //     const groups = Object.entries(getGroups)
-//     //         .slice(0)
-//     //         .map((entry) => entry[1])
-//     //     let lengthOfCharacter = this.helper.DB.group.CharacterData
-//     //     // const groups = !this.groups ? await this.client.groupFetchAllParticipating() : this.groups
-//     //     if (!groups) return void null // add this check
-//     //     for (const group of groups) {
-//     //         lengthOfCharacter.push(group)
-//     //     }
-//     //     this.client.log(
-//     //         `Successfully loaded ${chalk.blueBright(`${lengthOfCharacter.length}`)} ${
-//     //             lengthOfCharacter.length > 1 ? 'groups' : 'group'
-//     //         } which has enabled chara`
-//     //     )
-//     //     await this.spawnChara()
-//     // }
-//      let getAllGroups = Object.keys(await this.client.groupFetchAllParticipating());
-
-//     //  let characterOfMe = this.helper.DB.group.CharacterData
-//     const characterOfMe = this.helper.DB.characterData
-
-
-//     const groups = await getAllGroups
-//     for (const group of groups) {
-//         const data = await this.helper.DB.getGroup(group)
-//         if (!data.chara) continue
-//         this.helper.DB.group.CharacterData.push(group)
-//     }
-//     this.client.log(
-//         `Successfully loaded ${chalk.blueBright(`${characterOfMe.length}`)} ${
-//             characterOfMe.length > 1 ? 'groups' : 'group'
-//         } which has enabled chara`
-//     )
-//     await this.spawnChara()
-// }
-
    spawnChara = async () => {
-        schedule('*/1 * * * *', async () => {
-            if (this.helper.DB.group.CharacterData.length < 1) return void null
-            for (let i = 0; i < this.helper.DB.group.CharacterData.length; i++) {
-                setTimeout(async () => {
-                    const { chara, bot } = await this.helper.DB.getGroup(this.helper.DB.group.wild[i])
-                    if (bot !== 'all' && bot !== process.env.NAME.split(' ')[0]) return void null
-                    if (!chara) return void null
-                    await new Character()
-                        .getRandomCharacter()
-                        .then(async (chara) => {
-                            const price = Math.floor(Math.random() * (50000 - 25000) + 25000)
-                            let source = ''
-                            await new Character()
-                                .getCharacterAnime(chara.mal_id)
-                                .then((res) => (source = res.data[0].anime.title))
-                                .catch(async () => {
-                                    await new Character()
-                                        .getCharacterManga(chara.mal_id.toString())
-                                        .then((res) => (source = res.data[0].manga.title))
-                                        .catch(() => {})
-                                })
-                            const buffer = await this.helper.utils.getBuffer(chara.images.jpg.image_url)
-                            const buttons = [
-                                {
-                                    buttonId: 'id1',
-                                    buttonText: { displayText: `${process.env.PREFIX}claim` },
-                                    type: 1
-                                }
-                            ]
-                            const buttonMessage = {
-                                image: buffer,
-                                caption: `*A claimable character Appeared!*\n\n🏮 *Name: ${chara.name}*\n\n📑 *About:* ${chara.about}\n\n💮 *Source: ${source}*\n\n🪙 *Price: ${price}*\n\n*[Use ${this.client.config.prefix}claim to have this character in your gallery]*`,
-                                footer: '',
-                                buttons: buttons,
-                                headerType: 4
-                            }
-                            this.charaResponse.set(this.helper.DB.group.CharacterData[i], { price, data: chara })
-                            await this.client.sendMessage(this.helper.DB.group.CharacterData[i], buttonMessage)
-                        })
-                        .catch(() => {})
-                }, (i + 1) * 20 * 1000)
+    try {
+        setInterval(async () => {
+            const chara=await db.get('chara')
+            global.char= chara || []   
+            // let groups = await db.get('chara') || []  groups[Math.floor(Math.random() * groups.length)]
+            let gc = '120363110747479694@g.us'
+            let stars = ["⭐️⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️", "⭐️", "⭐️⭐️⭐️⭐️", "⭐️⭐️⭐️"]
+            let count = stars[Math.floor(Math.random() * stars.length)]
+            const price = Math.floor(Math.random() * (50000 - 25000) + 25000);
+            await db.set(`chara_p_${gc}`, price)
+            const {
+                data
+            } = await axios.get(
+                `https://reina-api.vercel.app/api/mwl/random`
+            )
+            await db.set(`${gc}_chara`, data.data.slug)
+            let des = ''
+            try {
+                des += data.data.description.substring(0, 100)
+            } catch {
+                des += "none"
             }
-};
+            console.log('send')
+            console.log(data.data.slug)
+            this.client.sendMessage(gc, {
+                image: {
+                    url: data.data.image
+                },
+                caption: `A Claimable character appeared!\n\🏮 *Name: ${data.data.name}*\n\n *STARS➡️${count}⬅️*\n\n📑 *About:* ${des}\n\n*Source:* ${data.data.appearances[0].name}\n\n*Price:* ${price}\n\n\nUse #claim to claim the character`
+            })
+            setTimeout(async () => {
+                await db.delete(`${gc}_chara`)
+                console.log("deleted")
+            }, 3 * 60 * 1000);
+        }, 10 * 60 * 1000)
+    } catch (e) {
+        console.log(e)
+
+    }
+   }
 
 
 
