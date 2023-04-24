@@ -19,6 +19,7 @@ module.exports = class command extends Command {
      */
 
     execute = async (m, args , client) => {
+        let sender = m.sender.username
         let { context } = args
        if (!context) return m.reply('No query provided!')
        const getGroups = await this.client.groupFetchAllParticipating()
@@ -30,7 +31,7 @@ module.exports = class command extends Command {
        for (let i of res) {
            const groupMetadata = await this.client.groupMetadata(i)
            const groupMembers = groupMetadata?.participants.map((x) => x.id) || []
-           const text = `🔰*「 ${process.env.NAME}\'s BROADCAST 」*🔰\n\n🏮 Message: ${context}`
+           const text = `🔰*「 ${process.env.NAME}\'s BROADCAST 」*🔰\n\n🏮 Message: ${context}\n\n*Regards:* ${sender} `
            await this.client.sendMessage(i, {
                video: {
                    url: 'https://telegra.ph/file/f0c24da2961de0bede5e1.mp4'
