@@ -61,7 +61,7 @@ module.exports = class MessageHandler {
     ]
       const message = {
         image: {url: imageData},
-        caption: `A Claimable character appeared!\n\🏮 *Name: ${data.name}*\n\n *STARS➡️${count}⬅️*\n\n📑 *About:* ${des}\n\n*Source:* ${data.appearances[0].name}\n\n*Price:* ${price}\n\n\nUse #claim to claim the character`,
+        caption: `A Claimable character appeared!\n\🏮 *Name: ${data.name}*\n\n *STARS➡️${count}⬅️*\n\n📑 *About:* ${des}\n\n*Source:* ${data.appearances[0].name}\n\n*Price:* ${price}\n\n\nUse ${this.helper.config.prefix} claim to claim the character`,
         footer: `${process.env.NAME}`,
         buttons: buttons,
         headerType: 4
