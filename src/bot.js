@@ -15,9 +15,9 @@ const Auth = require('./Structures/Auth')
 
 const helper = new Helper({
     prefix: process.env.PREFIX || '+',
-    name: process.env.NAME || '',
+    name: process.env.NAME || 'Rin',
     mods: (process.env.MODS || '').split(', ').map((jid) => `${jid}@s.whatsapp.net`),
-    session: process.env.SESSION || '',
+    session: process.env.SESSION || 'XRE',
     PORT: (process.env.PORT || 3000)
 })
 
@@ -43,7 +43,7 @@ const start = async () => {
         printQRInTerminal: true,
         auth: state,
         logger: P({ level: 'fatal' }),
-        browser: ['Quantam', 'fatal', '1.0.0']
+        browser: ['Dipeshuuu', 'fatal', '1.0.0']
     })
 
     const messageHandler = new MessageHandler(client, helper)
