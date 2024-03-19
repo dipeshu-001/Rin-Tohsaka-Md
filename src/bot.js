@@ -18,7 +18,7 @@ const helper = new Helper({
     name: process.env.NAME || 'Rin',
     mongo: process.env.MONGO || 'mongodb+srv://chey:K77iYsuTRyJ4TgXf@cluster0.wtlbba3.mongodb.net/?retryWrites=true&w=majority',
     mods: (process.env.MODS || '').split(', ').map((jid) => `${jid}@s.whatsapp.net`),
-    session: process.env.SESSION || 'XRE',
+    session: process.env.SESSION || 'rin',
     PORT: (process.env.PORT || 3000)
 })
 
