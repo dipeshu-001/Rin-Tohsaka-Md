@@ -22,7 +22,7 @@
     "url": "https://github.com/Toshi-san001/Rin-Tohsaka.git"
   },
   "dependencies": {
-    "@iamrony777/baileys": "^6.5.0-7",
+    "@adiwajshing/keyed-db": "^0.2.4",
     "@whiskeysockets/baileys": "^6.4.1",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@hapi/boom": "^10.0.1",
