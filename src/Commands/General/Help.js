@@ -22,7 +22,7 @@ module.exports = class command extends Command {
     execute = async (m, args) => {
         const { context } = args
         if (!context) { 
-            const buffer = await this.helper.utils.getBuffer('https://telegra.ph/file/01ed8e4ad44b91417a64b.mp4')
+            const buffer = await this.helper.utils.getBuffer('https://telegra.ph/file/b75d145fb5f9eac1f09cc.mp4')
             const commands = Array.from(this.handler.commands, ([command, data]) => ({
                 command,
                 data
