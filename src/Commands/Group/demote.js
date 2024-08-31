@@ -12,11 +12,6 @@ module.exports = class command extends Command {
         })
     }
 
-    /**
-     * @param {Message} m
-     * @returns {Promise<void>}
-     */
-
     execute = async (m , args) => {
 
         const groupMetadata = await this.client.groupMetadata(m.from)
